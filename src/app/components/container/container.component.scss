@@ -1,5 +1,7 @@
-:host {
-  min-height: 100vh;
+.container {
+  height: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

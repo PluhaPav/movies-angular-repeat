@@ -1,0 +1,31 @@
+:host {
+  background: #f2f2f2;
+}
+.footer {
+  padding: 22px 0 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  &__info {
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px;
+  }
+  &__text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #333333;
+    padding-bottom: 6px;
+  }
+  &__link {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #1f4766;
+    text-decoration: none;
+    padding-top: 4px;
+  }
+}
