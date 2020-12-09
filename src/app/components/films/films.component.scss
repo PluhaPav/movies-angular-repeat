@@ -1,0 +1,116 @@
+.film {
+  &__link {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+    color: #333333;
+    display: block;
+    height: 100%;
+    &:active,
+    &:visited {
+      color: #333333;
+    }
+  }
+  &__image {
+    display: block;
+    width: 100%;
+    object-fit: contain;
+    transition: filter ease-in 0.3s, opacity ease-in 0.3s;
+  }
+  &__preview {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  &__description {
+    position: absolute;
+    padding: 16px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 140%;
+    color: #f2f2f2;
+    top: 0;
+    opacity: 0;
+  }
+  &__name {
+    display: inline-block;
+    padding-top: 16px;
+  }
+}
+.films {
+  &__title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: right;
+    color: #333333;
+    display: inline-block;
+    padding-top: 32px;
+  }
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 450px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    & .genre {
+      min-height: 208px;
+      border-radius: 6px;
+      box-shadow: inset 0px 0px 16px rgba(0, 0, 0, 0.15);
+      position: relative;
+      &:nth-child(4n - 3) {
+        background: linear-gradient(127.83deg, #f2c94c 8.44%, #f29a4a 91.36%);
+      }
+      &:nth-child(4n - 2) {
+        background: linear-gradient(127.83deg, #F2994A 8.44%, #EB5757 91.36%);
+      }
+      &:nth-child(4n - 1) {
+        background: linear-gradient(127.83deg, #56CCF2 8.44%, #2F80ED 91.36%);
+      }
+      &:nth-child(4n) {
+        background: linear-gradient(127.83deg, #828282 8.44%, #333333 91.36%);
+      }
+      &__link {
+        @extend .film__link;
+        color: #ffffff;
+        &:active,
+        &:visited {
+          color: #ffffff;
+        }
+      }
+      &__preview {
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+      }
+      &__name{
+          position: absolute;
+          bottom: 24px;
+          left: 50%;
+          transform: translateX(-50%);
+      }
+    }
+  }
+}
+
+.films__items .film__link:hover {
+  & .film__image {
+    filter: brightness(0.5);
+  }
+  & .film__description {
+    opacity: 1;
+  }
+}

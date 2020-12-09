@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatTabsModule } from '@angular/material/tabs';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,8 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { AuthorizationComponent } from './components/authorization/authorization.component';
 import { ContainerComponent } from './components/container/container.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FilmsComponent } from './components/films/films.component';
+import { TvChannelsComponent } from './components/tv-channels/tv-channels.component';
 
 @NgModule({
   declarations: [
@@ -18,14 +21,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FooterComponent,
     LayoutComponent,
     AuthorizationComponent,
-    ContainerComponent
+    ContainerComponent,
+    FilmsComponent,
+    TvChannelsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

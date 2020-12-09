@@ -1,0 +1,51 @@
+<div class="films__new">
+  <h2 class="films__title">
+    <img
+      src="../../../assets/image/fire.svg"
+      alt="Новинки"
+      class="films__title-icon"
+    />
+    Новинки
+  </h2>
+  <div class="films__items">
+    <div *ngFor="let film of films" class="films__item film">
+      <a href="{{ film.link }}" class="film__link">
+        <div class="film__preview">
+          <img
+            src="{{ film.image }}"
+            alt="{{ film.name }}"
+            class="film__image"
+          />
+          <span *ngIf="film.description" class="film__description">
+            {{ film.description }}
+          </span>
+        </div>
+        <span class="film__name">
+          {{ film.name }}
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="films__genres">
+  <h2 class="films__title">Жанры</h2>
+  <div class="films__items">
+    <div *ngFor="let genre of genres" class="films__item genre">
+      <a href="{{ genre.link }}" class="genre__link">
+        <div class="genre__preview">
+          <img
+            src="{{ genre.image }}"
+            alt="{{ genre.name }}"
+            class="genre__image"
+          />
+          <span *ngIf="genre.description" class="genre__description">
+            {{ genre.description }}
+          </span>
+        </div>
+        <span class="genre__name">
+          {{ genre.name }}
+        </span>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="channels">
+  <div *ngFor="let channel of channels" class="channel">
+    <div class="channel__image-container">
+      <img
+        src="{{ channel.image }}"
+        alt="Первый канал"
+        class="channel__image"
+      />
+    </div>
+    <div class="channel__info">
+      <h4 class="channel__title">{{ channel.name }}</h4>
+      <ul class="channel__programs">
+        <li
+          *ngFor="let program of channel.list; let i = index"
+          [ngClass]="i == 0 ? 'channel__program--active' : ''"
+          class="channel__program"
+        >
+          <span class="channel__program-time">{{ program.time }}</span>
+          <span class="channel__program-name">{{ program.name }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
