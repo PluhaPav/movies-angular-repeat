@@ -33,6 +33,7 @@
     }
   }
   &__form {
+    display: flex;
   }
   &__input {
     border: 0;
@@ -45,6 +46,16 @@
     color: #828282;
     padding: 6px 0;
     margin-right: 32px;
+    width: 320px;
+    @media (max-width: 800px) {
+      width: 100%;
+    }
+    @media (max-width: 700px) {
+      width: 320px;
+    }
+    @media (max-width: 470px) {
+      width: 100%;
+    }
   }
 
   & .search-btn {
@@ -61,6 +72,9 @@
     border-radius: 4px;
     &:hover {
       border: 1px solid #e5261e;
+    }
+    &:disabled{
+      cursor: not-allowed;
     }
   }
 }

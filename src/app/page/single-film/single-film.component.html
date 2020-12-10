@@ -1,0 +1,42 @@
+<div *ngIf="film" class="film">
+  <button class="go-back" (click)="goBack()">
+      <img src="../../../assets/image/back-link.png" alt="go back" class="go-back__image">
+  </button>
+  <div class="film__preview">
+    <img src="{{ film.image }}" alt="{{ film.name }}" />
+  </div>
+  <div class="film__info">
+    <!-- row -->
+    <div *ngIf="film.name" class="film__row">
+      <div class="film__column">
+        <span class="film__label">Название:</span>
+      </div>
+      <div class="film__column">
+        <span class="film__text">{{ film.name }}</span>
+      </div>
+    </div>
+    <!-- row -->
+    <div *ngIf="film.country" class="film__row">
+      <div class="film__column">
+        <span class="film__label">Страна:</span>
+      </div>
+      <div class="film__column">
+        <span class="film__text">{{ film.country }}</span>
+      </div>
+    </div>
+    <!-- row -->
+    <div *ngIf="film.genre" class="film__row">
+      <div class="film__column">
+        <span class="film__label">Жанр:</span>
+      </div>
+      <div class="film__column">
+        <span class="film__text">{{ film.genre }}</span>
+      </div>
+    </div>
+    <!-- row -->
+    <div *ngIf="film.description" class="film__row">
+      <span class="film__description">{{ film.description }}</span>
+    </div>
+  </div>
+</div>
+<app-comments></app-comments>

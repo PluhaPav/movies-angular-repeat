@@ -1,0 +1,26 @@
+<div class="comments">
+  <h3 class="comments__title">Комментарии</h3>
+  <div class="comments__enter">
+    <form
+      [formGroup]="commentForm"
+      class="comment__form"
+      novalidate
+      (ngSubmit)="submit()"
+    >
+      <textarea
+        formControlName="comment"
+        class="comment__textarea"
+        placeholder="Введите комментарий..."
+      ></textarea>
+      <button class="comment__button">Опубликовать</button>
+    </form>
+  </div>
+  <div class="comments__list">
+    <div *ngFor="let comment of comments" class="comment__item">
+      <span class="comment__author"> {{comment.name}} </span>
+      <p class="comment__text">
+        {{comment.comment}}
+      </p>
+    </div>
+  </div>
+</div>

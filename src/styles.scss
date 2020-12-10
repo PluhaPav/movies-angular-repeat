@@ -98,3 +98,30 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.mat-tab-nav-bar,
+.mat-tab-header {
+  border: 0;
+}
+.mat-tab-label{
+  min-width: unset!important;
+}
+.mat-tab-label,
+.mat-tab-link {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 33px;
+  color: #333333;
+  height: 44px;
+  opacity: 1 !important;
+  padding: 0 !important;
+  margin: 0 12px;
+  &-active {
+    color: #e5261e;
+  }
+}
+.mat-tab-group.mat-primary .mat-ink-bar,
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: #e5261e;
+}

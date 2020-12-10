@@ -1,0 +1,86 @@
+.go-back {
+  min-width: 20px;
+  min-height: 20px;
+  height: 20px;
+  border: 0;
+  outline: 0;
+  display: block;
+  cursor: pointer;
+  background: transparent;
+
+  @media (max-width: 700px) {
+    width: auto;
+    height: auto;
+    margin: 10px;
+  }
+  @media (max-width: 320px) {
+    margin: 10px auto;
+  }
+  &__image {
+    object-fit: contain;
+    display: block;
+    width: 10px;
+    height: 20px;
+  }
+}
+.film {
+  display: flex;
+  padding: 17px 0px;
+
+  @media (max-width: 700px) {
+    flex-wrap: wrap;
+  }
+  & .go-back {
+    padding-top: 12px;
+
+    @media (max-width: 700px) {
+      padding-top: 0;
+    }
+  }
+  &__preview {
+    background: #c4c4c4;
+    border-radius: 8px;
+    max-width: 280px;
+    max-height: 370px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0 120px 0 90px;
+    @media (max-width: 980px) {
+      margin: 0 20px 0 20px;
+    }
+    @media (max-width: 700px) {
+      margin: 0 20px 20px;
+    }
+    @media (max-width: 380px) {
+      margin: 0 0 20px;
+    }
+  }
+  &__row {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    grid-gap: 24px;
+    padding-bottom: 24px;
+    align-items: flex-end;
+    &:last-child {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__label {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #333333;
+  }
+  &__text {
+    @extend .film__label;
+    font-size: 20px;
+    line-height: 24px;
+  }
+  &__description {
+    @extend .film__label;
+    font-size: 16px;
+    line-height: 22px;
+  }
+}

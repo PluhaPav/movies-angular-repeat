@@ -13,6 +13,11 @@ import { ContainerComponent } from './components/container/container.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FilmsComponent } from './components/films/films.component';
 import { TvChannelsComponent } from './components/tv-channels/tv-channels.component';
+import { ModalAuthorizationComponent } from './components/modal-authorization/modal-authorization.component';
+import { HomePageComponent } from './page/home-page/home-page.component';
+import { SingleFilmComponent } from './page/single-film/single-film.component';
+import { NotFoundComponent } from './page/not-found/not-found.component';
+import { CommentsComponent } from './components/comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +28,12 @@ import { TvChannelsComponent } from './components/tv-channels/tv-channels.compon
     AuthorizationComponent,
     ContainerComponent,
     FilmsComponent,
-    TvChannelsComponent
+    TvChannelsComponent,
+    ModalAuthorizationComponent,
+    HomePageComponent,
+    SingleFilmComponent,
+    NotFoundComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,

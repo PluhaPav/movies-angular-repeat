@@ -4,6 +4,7 @@ interface IListProgram {
 }
 
 export interface IChannels {
+    id: number;
     image: string;
     name: string;
     list: IListProgram[];

@@ -9,7 +9,7 @@
   </h2>
   <div class="films__items">
     <div *ngFor="let film of films" class="films__item film">
-      <a href="{{ film.link }}" class="film__link">
+      <a [routerLink]="['film', film.id]" class="film__link">
         <div class="film__preview">
           <img
             src="{{ film.image }}"

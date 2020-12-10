@@ -6,16 +6,21 @@
   margin-top: 27px;
   max-height: 696px;
   overflow-y: auto;
-  padding-right: 10px;
+  padding-right: 14px;
   &::-webkit-scrollbar {
     width: 8px;
     background: #f2f2f2;
     border-radius: 2px;
   }
+  // &::-webkit-scrollbar-track {
+  //   background: #F2F2F2;
+  //   border-radius: 2px;
+  //   width: 8px;
+  // }
   &::-webkit-scrollbar-thumb {
-    background-color: #bdbdbd;
+    background: #bdbdbd;
     border-radius: 2px;
-    width: 4px;
+    width: 8px;
   }
 }
 
@@ -33,7 +38,7 @@
     max-height: 64px;
     object-fit: contain;
     &-container {
-      max-width: 400px;
+      max-width: 380px;
       width: 100%;
       display: flex;
       justify-content: center;
