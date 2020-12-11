@@ -1,1 +1,39 @@
-<p>modal-authorization works!</p>
+<div #modalContainer class="modal__container">
+  <h2 class="modal__title">Вход</h2>
+  <form
+    class="modal__form"
+    [formGroup]="authorizationForm"
+    novalidate
+    (submit)="logIn()"
+  >
+    <div class="modal__row">
+      <input
+        type="text"
+        name="login"
+        class="modal__input"
+        formControlName="login"
+      />
+    </div>
+    <div class="modal__row">
+      <input
+        type="password"
+        name="password"
+        class="modal__input"
+        formControlName="password"
+      />
+    </div>
+    <div class="modal__row">
+      <input
+        type="checkbox"
+        name="save"
+        class="modal__checkbox"
+        id="save"
+        formControlName="save"
+      />
+      <label for="save">Запомнить</label>
+    </div>
+    <div class="modal__row modal__row--align-center">
+      <button class="modal__btn" [disabled]="authorizationForm.invalid">Войти</button>
+    </div>
+  </form>
+</div>

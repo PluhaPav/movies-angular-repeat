@@ -13,6 +13,29 @@
   transition: all 0.5s;
   &:hover {
     background: transparent;
-    color:  #e5261e;
+    color: #e5261e;
   }
+  &--valid {
+    border: 1px solid transparent;
+    background: transparent;
+    padding: 6px;
+    font-style: normal;
+    color: #e5261e;
+    cursor: pointer;
+    transition: all 0.5s;
+    &:hover {
+      border: 1px solid #e5261e;
+    }
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+}
+
+.authorization-name {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #333333;
 }

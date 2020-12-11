@@ -18,6 +18,8 @@ import { HomePageComponent } from './page/home-page/home-page.component';
 import { SingleFilmComponent } from './page/single-film/single-film.component';
 import { NotFoundComponent } from './page/not-found/not-found.component';
 import { CommentsComponent } from './components/comments/comments.component';
+import { ModalAuthorizationService } from './services/modals/modal-authorization.service';
+import { AuthorizationService } from './services/authorization/authorization.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,10 @@ import { CommentsComponent } from './components/comments/comments.component';
     BrowserAnimationsModule,
     MatTabsModule
   ],
-  providers: [],
+  providers: [
+    ModalAuthorizationService,
+    AuthorizationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

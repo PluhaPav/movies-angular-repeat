@@ -1,3 +1,11 @@
-<button class="authorization-btn">
-    Войти
+<span *ngIf="name && authorization" class="authorization-name">
+    {{name}}
+</span>
+<button
+  [ngClass]="authorization ? 'authorization-btn--valid' : ''"
+  class="authorization-btn"
+  (click)="showModal()"
+>
+  {{authorization ? 'Выйти' : 'Войти'}}
 </button>
+<button></button>
