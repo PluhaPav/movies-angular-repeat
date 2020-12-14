@@ -13,6 +13,16 @@
     color: #333333;
     padding-bottom: 24px;
   }
+  &__empty {
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #333333;
+  }
 }
 
 .comment {
@@ -36,6 +46,7 @@
     line-height: 19px;
     color: #333333;
     margin-bottom: 16px;
+    position: relative;
     &::placeholder {
       color: #333333;
     }
@@ -71,5 +82,18 @@
     color: #333333;
     padding-bottom: 8px;
     display: inline-block;
+  }
+  &__delete{
+    display: block;
+    width: 15px;
+    height: 15px;
+    border: 0;
+    outline: 0;
+    background: url(../../../assets/image/delete.png);
+    background-size: contain;
+    position: absolute;
+    right: -33px;
+    top: 0;
+    cursor: pointer;
   }
 }

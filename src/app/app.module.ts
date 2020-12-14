@@ -20,6 +20,7 @@ import { NotFoundComponent } from './page/not-found/not-found.component';
 import { CommentsComponent } from './components/comments/comments.component';
 import { ModalAuthorizationService } from './services/modals/modal-authorization.service';
 import { AuthorizationService } from './services/authorization/authorization.service';
+import { DataCommentsService } from './services/comments/data-comments.service';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { AuthorizationService } from './services/authorization/authorization.ser
   ],
   providers: [
     ModalAuthorizationService,
-    AuthorizationService
+    AuthorizationService,
+    DataCommentsService
   ],
   bootstrap: [AppComponent]
 })

@@ -14,6 +14,7 @@ export class SingleFilmComponent implements OnInit {
 
   idFilm: number;
   film: IFilms | undefined;
+  authorization = false;
 
   constructor(
     private location: Location,
@@ -24,7 +25,7 @@ export class SingleFilmComponent implements OnInit {
     this.film = dataFilms.getFilm(this.idFilm);
   }
 
-  goBack() {
+  goBack(): void {
     this.location.back();
   }
   ngOnInit() { }

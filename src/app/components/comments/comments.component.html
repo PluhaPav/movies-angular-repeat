@@ -1,6 +1,6 @@
 <div class="comments">
   <h3 class="comments__title">Комментарии</h3>
-  <div class="comments__enter">
+  <div *ngIf="authorization" class="comments__enter">
     <form
       [formGroup]="commentForm"
       class="comment__form"
@@ -17,10 +17,18 @@
   </div>
   <div class="comments__list">
     <div *ngFor="let comment of comments" class="comment__item">
-      <span class="comment__author"> {{comment.name}} </span>
+      <span class="comment__author"> {{ comment.name }} </span>
       <p class="comment__text">
-        {{comment.comment}}
+        {{ comment.comment }}
       </p>
+      <button
+        *ngIf="user && user.id === comment.authorId"
+        class="comment__delete"
+        (click)="deleteComment(comment.id)"
+      ></button>
     </div>
+    <span *ngIf="!comments.length" class="comments__empty"
+      >Комментариев не найдено.</span
+    >
   </div>
 </div>

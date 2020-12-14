@@ -4,7 +4,7 @@
 <button
   [ngClass]="authorization ? 'authorization-btn--valid' : ''"
   class="authorization-btn"
-  (click)="showModal()"
+  (click)="onClick()"
 >
   {{authorization ? 'Выйти' : 'Войти'}}
 </button>

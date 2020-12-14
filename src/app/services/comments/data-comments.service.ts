@@ -53,18 +53,24 @@ export class DataCommentsService {
     },
   ];
 
-  getCommentsByFilm(): IComments[] {
-    return this.comments;
+  getCommentsByFilm(id?: number): IComments[] | [] {
+    return this.comments.filter(film => id ? film.filmId === +id : false);
   }
 
-  setCommentByFilm(filmId: number, authorId: number, comment: string): void {
-    this.comments.push({
+  setCommentByFilm(filmId: number, authorId: number, name: string, comment: string): IComments[] | [] {
+    this.comments.unshift({
       id: ++this.lastIdComments,
       authorId,
       filmId,
-      name: '',
+      name,
       comment
     });
+    return this.comments;
+  }
+
+  deleteComment(id: number): IComments[] | [] {
+    this.comments = this.comments.filter(comment => comment.id !== id);
+    return this.comments;
   }
 
 }

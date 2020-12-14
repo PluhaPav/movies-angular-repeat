@@ -17,8 +17,8 @@ export class AuthorizationComponent implements DoCheck {
   ) { }
 
 
-  showModal(): void {
-    this.modalAuthorizationService.toggleModal();
+  onClick(): void {
+    this.authorization ? this.authorizationService.removeUser() : this.modalAuthorizationService.toggleModal();
   }
 
   ngDoCheck(): void {
