@@ -1,6 +1,7 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { debounceTime, distinctUntilChanged } from "rxjs/operators";
+import { Router } from '@angular/router';
+import { debounceTime } from 'rxjs/operators';
 
 import { SearchService } from 'src/app/services/search/search.service';
 
@@ -9,13 +10,16 @@ import { SearchService } from 'src/app/services/search/search.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit, AfterViewInit {
+export class HeaderComponent {
 
   logoImage = '../../../assets/image/logo.png';
 
   searchForm: FormGroup;
 
-  constructor(private searchService: SearchService) {
+  constructor(
+    private router: Router,
+    private searchService: SearchService,
+  ) {
     this.searchForm = new FormGroup({
       search: new FormControl('', Validators.required)
     });
@@ -26,22 +30,6 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
   submit(): void {
     this.searchService.setSearchString(this.searchForm.value.search);
-  }
-
-  ngOnInit(): void {
-  }
-
-  ngAfterViewInit(): void {
-    // fromEvent(this.searchForm.nativeElement, 'keyup')
-    //   .pipe(
-    //     filter(Boolean),
-    //     debounceTime(1500),
-    //     distinctUntilChanged(),
-    //     tap((event: KeyboardEvent) => {
-    //       console.log(event)
-    //       console.log(this.searchInput.nativeElement.value)
-    //     })
-    //   )
-    //   .subscribe();
+    this.router.navigate(['/']);
   }
 }
