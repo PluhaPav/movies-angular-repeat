@@ -26,8 +26,6 @@
 }
 
 .comment {
-  &__enter {
-  }
   &__form {
     display: block;
     width: 100%;
@@ -58,6 +56,15 @@
     &::placeholder {
       color: #e5261e;
     }
+    & + label {
+      position: absolute;
+      top: -40px;
+      left: 0px;
+      font-size: 11px;
+      color: red;
+      opacity: 0;
+      animation: animateErrorLabel 0.3s ease-in-out forwards;
+    }
   }
   &__button {
     font-style: normal;
@@ -73,6 +80,11 @@
     cursor: pointer;
     position: absolute;
     left: calc(100% + 16px);
+    @media (max-width: 1200px) {
+      position: relative;
+      left: 0;
+      margin-bottom: 16px;
+    }
   }
   &__author {
     font-style: normal;
@@ -83,7 +95,7 @@
     padding-bottom: 8px;
     display: inline-block;
   }
-  &__delete{
+  &__delete {
     display: block;
     width: 15px;
     height: 15px;
@@ -95,5 +107,21 @@
     right: -33px;
     top: 0;
     cursor: pointer;
+
+    @media (max-width: 880px) {
+      right: 16px;
+      top: 16px;
+    }
+  }
+}
+
+@keyframes animateErrorLabel {
+  from{
+    opacity: 0;
+    top: -40px;
+  }
+  to{
+    top: -20px;
+    opacity: 1;
   }
 }

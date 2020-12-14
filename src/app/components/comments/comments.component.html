@@ -11,7 +11,16 @@
         formControlName="comment"
         class="comment__textarea"
         placeholder="Введите комментарий..."
+        id="comment__textarea"
       ></textarea>
+      <label
+        *ngIf="
+          commentForm.controls['comment'].invalid &&
+          commentForm.controls['comment'].touched
+        "
+        for="comment__textarea"
+        >Слишком короткий комментарий, необходимо более 10 символов!</label
+      >
       <button class="comment__button">Опубликовать</button>
     </form>
   </div>

@@ -10,17 +10,35 @@
       <input
         type="text"
         name="login"
+        id="login"
         class="modal__input"
         formControlName="login"
       />
+      <label
+        *ngIf="
+          authorizationForm.controls['login'].invalid &&
+          authorizationForm.controls['login'].touched
+        "
+        for="login"
+        >Обязательное и более 4 символов!</label
+      >
     </div>
     <div class="modal__row">
       <input
         type="password"
         name="password"
+        id="password"
         class="modal__input"
         formControlName="password"
       />
+      <label
+        *ngIf="
+          authorizationForm.controls['password'].invalid &&
+          authorizationForm.controls['password'].touched
+        "
+        for="password"
+        >Обязательное и более 8 символов!</label
+      >
     </div>
     <div class="modal__row">
       <input
@@ -33,7 +51,9 @@
       <label for="save">Запомнить</label>
     </div>
     <div class="modal__row modal__row--align-center">
-      <button class="modal__btn" [disabled]="authorizationForm.invalid">Войти</button>
+      <button class="modal__btn" [disabled]="authorizationForm.invalid">
+        Войти
+      </button>
     </div>
   </form>
 </div>

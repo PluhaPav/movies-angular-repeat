@@ -1,8 +1,8 @@
 <header class="header">
-  <div class="header__logo">
+  <a [routerLink]="''" class="header__logo">
     <img src="{{ logoImage }}" alt="Видеосервис" class="header__logo-image" />
     <span class="header__logo-text">Видеосервис</span>
-  </div>
+  </a>
   <div class="header__search">
     <form
       [formGroup]="searchForm"
@@ -10,7 +10,13 @@
       novalidate
       (ngSubmit)="submit()"
     >
-      <input type="search" class="header__input" id="search-input" formControlName="search" placeholder="Поиск..."/>
+      <input
+        type="search"
+        class="header__input"
+        id="search-input"
+        formControlName="search"
+        placeholder="Поиск..."
+      />
       <button class="search-btn" [disabled]="searchForm.invalid">Найти</button>
     </form>
   </div>

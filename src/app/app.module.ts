@@ -21,6 +21,8 @@ import { CommentsComponent } from './components/comments/comments.component';
 import { ModalAuthorizationService } from './services/modals/modal-authorization.service';
 import { AuthorizationService } from './services/authorization/authorization.service';
 import { DataCommentsService } from './services/comments/data-comments.service';
+import { SearchPipe } from './pipes/search/search.pipe';
+import { SearchService } from './services/search/search.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { DataCommentsService } from './services/comments/data-comments.service';
     HomePageComponent,
     SingleFilmComponent,
     NotFoundComponent,
-    CommentsComponent
+    CommentsComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,8 @@ import { DataCommentsService } from './services/comments/data-comments.service';
   providers: [
     ModalAuthorizationService,
     AuthorizationService,
-    DataCommentsService
+    DataCommentsService,
+    SearchService
   ],
   bootstrap: [AppComponent]
 })

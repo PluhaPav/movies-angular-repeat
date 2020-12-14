@@ -7,8 +7,13 @@
     />
     Новинки
   </h2>
-  <div class="films__items">
-    <div *ngFor="let film of films" class="films__item film">
+  <div
+    [ngClass]="
+      (films | search: search).length === 0 ? 'films__items--empty' : ''
+    "
+    class="films__items"
+  >
+    <div *ngFor="let film of films | search: search" class="films__item film">
       <a [routerLink]="['film', film.id]" class="film__link">
         <div class="film__preview">
           <img
@@ -24,6 +29,9 @@
           {{ film.name }}
         </span>
       </a>
+    </div>
+    <div *ngIf="(films | search: search).length === 0" class="film__empty">
+      Ничего не найдено по вашему запросу &laquo;{{search}}&raquo;...
     </div>
   </div>
 </div>
