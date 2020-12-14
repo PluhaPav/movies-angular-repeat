@@ -23,6 +23,7 @@ import { AuthorizationService } from './services/authorization/authorization.ser
 import { DataCommentsService } from './services/comments/data-comments.service';
 import { SearchPipe } from './pipes/search/search.pipe';
 import { SearchService } from './services/search/search.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { SearchService } from './services/search/search.service';
     ModalAuthorizationService,
     AuthorizationService,
     DataCommentsService,
-    SearchService
+    SearchService,
+    CookieService
   ],
   bootstrap: [AppComponent]
 })

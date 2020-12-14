@@ -1,4 +1,5 @@
 import { Component, DoCheck } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 import { AuthorizationService } from 'src/app/services/authorization/authorization.service';
 
 import { ModalAuthorizationService } from 'src/app/services/modals/modal-authorization.service';
@@ -13,12 +14,23 @@ export class AuthorizationComponent implements DoCheck {
   name: string | undefined;
   constructor(
     private modalAuthorizationService: ModalAuthorizationService,
-    private authorizationService: AuthorizationService
-  ) { }
+    private authorizationService: AuthorizationService,
+    private cookieService: CookieService
+  ) {
+    const user = this.cookieService.get('user');
+    if (user.length > 0) {
+      this.authorizationService.setUser(JSON.parse(user));
+    }
+  }
 
 
   onClick(): void {
-    this.authorization ? this.authorizationService.removeUser() : this.modalAuthorizationService.toggleModal();
+    if (this.authorization) {
+      this.cookieService.delete('user');
+      this.authorizationService.removeUser();
+    } else {
+      this.modalAuthorizationService.toggleModal();
+    }
   }
 
   ngDoCheck(): void {
