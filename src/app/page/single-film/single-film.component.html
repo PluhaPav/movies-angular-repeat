@@ -1,9 +1,17 @@
 <div *ngIf="film" class="film">
   <button class="go-back" (click)="goBack()">
-      <img src="../../../assets/image/back-link.png" alt="go back" class="go-back__image">
+    <img
+      src="../../../assets/image/back-link.png"
+      alt="go back"
+      class="go-back__image"
+    />
   </button>
   <div class="film__preview">
-    <img src="{{ film.image }}" alt="{{ film.name }}" />
+    <img
+      class="film__preview-image"
+      src="{{ film.image }}"
+      alt="{{ film.name }}"
+    />
   </div>
   <div class="film__info">
     <!-- row -->
