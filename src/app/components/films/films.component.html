@@ -8,9 +8,7 @@
     Новинки
   </h2>
   <div
-    [ngClass]="
-      (films | search: search).length === 0 ? 'films__items--empty' : ''
-    "
+    [ngClass]="{ 'films__items--empty': (films | search: search).length === 0 }"
     class="films__items"
   >
     <div *ngFor="let film of films | search: search" class="films__item film">
@@ -31,7 +29,7 @@
       </a>
     </div>
     <div *ngIf="(films | search: search).length === 0" class="film__empty">
-      Ничего не найдено по вашему запросу &laquo;{{search}}&raquo;...
+      Ничего не найдено по вашему запросу &laquo;{{ search }}&raquo;...
     </div>
   </div>
 </div>

@@ -12,7 +12,7 @@
       <ul class="channel__programs">
         <li
           *ngFor="let program of channel.list; let i = index"
-          [ngClass]="i == 0 ? 'channel__program--active' : ''"
+          [ngClass]="{ 'channel__program--active': i == 0 }"
           class="channel__program"
         >
           <span class="channel__program-time">{{ program.time }}</span>

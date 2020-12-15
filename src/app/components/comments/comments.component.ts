@@ -13,7 +13,7 @@ import { DataCommentsService } from 'src/app/services/comments/data-comments.ser
 })
 export class CommentsComponent implements DoCheck {
 
-  @Input() filmId: number | undefined;
+  @Input() filmId?: number;
   commentForm: FormGroup;
   comments: IComments[] = [];
   authorization = false;
@@ -28,7 +28,7 @@ export class CommentsComponent implements DoCheck {
     });
     this.comments = dataComments.getCommentsByFilm();
     this.user = this.authorizationService.getUser();
-    this.authorization = this.user ? true : false;
+    this.authorization = Boolean(this.user);
   }
 
   submit(): void {
@@ -51,7 +51,7 @@ export class CommentsComponent implements DoCheck {
 
   ngDoCheck(): void {
     this.user = this.authorizationService.getUser();
-    this.authorization = this.user ? true : false;
+    this.authorization = Boolean(this.user);
     this.comments = this.dataComments.getCommentsByFilm(this.filmId);
   }
 

@@ -35,7 +35,7 @@ export class AuthorizationComponent implements DoCheck {
 
   ngDoCheck(): void {
     const user = this.authorizationService.getUser();
-    this.authorization = user ? true : false;
+    this.authorization = Boolean(user);
     this.name = user?.name;
   }
 

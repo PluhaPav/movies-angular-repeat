@@ -1,11 +1,11 @@
 <span *ngIf="name && authorization" class="authorization-name">
-    {{name}}
+  {{ name }}
 </span>
 <button
-  [ngClass]="authorization ? 'authorization-btn--valid' : ''"
+  [ngClass]="{ 'authorization-btn--valid': authorization }"
   class="authorization-btn"
   (click)="onClick()"
 >
-  {{authorization ? 'Выйти' : 'Войти'}}
+  {{ authorization ? "Выйти" : "Войти" }}
 </button>
 <button></button>

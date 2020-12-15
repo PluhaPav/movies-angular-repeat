@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { IChannels } from 'src/app/interfaces/channels';
 import { DataChannelsService } from 'src/app/services/channels/data-channels.service';
 
@@ -8,15 +8,12 @@ import { DataChannelsService } from 'src/app/services/channels/data-channels.ser
   styleUrls: ['./tv-channels.component.scss'],
   providers: [DataChannelsService]
 })
-export class TvChannelsComponent implements OnInit {
+export class TvChannelsComponent {
 
   channels: IChannels[] = [];
 
   constructor(private dataChannels: DataChannelsService) {
     this.channels = dataChannels.getChannels();
-  }
-
-  ngOnInit(): void {
   }
 
 }

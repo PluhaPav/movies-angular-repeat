@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -10,7 +10,7 @@ import { IFilms } from 'src/app/interfaces/films';
   templateUrl: './single-film.component.html',
   styleUrls: ['./single-film.component.scss']
 })
-export class SingleFilmComponent implements OnInit {
+export class SingleFilmComponent {
 
   idFilm: number;
   film: IFilms | undefined;
@@ -28,6 +28,5 @@ export class SingleFilmComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
-  ngOnInit() { }
 
 }
