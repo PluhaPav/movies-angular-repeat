@@ -2,6 +2,8 @@
   animationDuration="0ms"
   mat-align-tabs="center"
   class="tabs-wrapper"
+  (selectedTabChange)="tabChanged($event)"
+  [selectedIndex]="currentIndexTab"
 >
   <mat-tab label="Фильмы">
     <app-films></app-films>

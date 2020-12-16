@@ -15,7 +15,7 @@ export class ModalAuthorizationComponent {
 
   @ViewChild('modalContainer', { static: false })
   modalContainer?: ElementRef;
-
+  ESCAPE_KEYCODE = 27;
   authorizationForm: FormGroup;
 
   constructor(
@@ -39,7 +39,12 @@ export class ModalAuthorizationComponent {
       !targetElement.classList.contains('authorization-btn') &&
       !this.modalContainer?.nativeElement.contains(event?.target)
     ) {
-      this.modalAuthorizationService.toggleModal();
+    }
+  }
+  @HostListener('document:keydown', ['$event'])
+  onKeydownHandler(event: KeyboardEvent): void {
+    if (event.keyCode === this.ESCAPE_KEYCODE) {
+      this.modalAuthorizationService.hide();
     }
   }
 

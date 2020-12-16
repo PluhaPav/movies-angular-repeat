@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
+import { MatTabChangeEvent } from '@angular/material/tabs';
+
+import { TabsService } from 'src/app/services/tabs/tabs.service';
 
 @Component({
   selector: 'app-layout',
@@ -6,6 +9,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./layout.component.scss']
 })
 
-export class LayoutComponent {
-
+export class LayoutComponent implements DoCheck {
+  currentIndexTab = 0;
+  constructor(private tabsService: TabsService) {
+    this.currentIndexTab = tabsService.getIndex();
+  }
+  tabChanged(tabChangeEvent: MatTabChangeEvent): void {
+    this.tabsService.setIndex(tabChangeEvent.index);
+  }
+  ngDoCheck(): void {
+    this.currentIndexTab = this.tabsService.getIndex();
+  }
 }
