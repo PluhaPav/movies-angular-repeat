@@ -1,11 +1,14 @@
 <div class="films__new">
   <h2 class="films__title">
     <img
+      *ngIf="search === ''"
       src="../../../assets/image/fire.svg"
       alt="Новинки"
       class="films__title-icon"
     />
-    Новинки
+    {{
+      search ? "Результат поиска" : "Новинки"
+    }}
   </h2>
   <div
     [ngClass]="{ 'films__items--empty': (films | search: search).length === 0 }"
